@@ -1,0 +1,38 @@
+<table>
+    <tr>
+      <td>Id</td>
+      <td>{{emp.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{emp.name}}</td>
+      </tr>
+    <tr>
+      <td>Age</td>
+      <td>{{emp.age}}</td>
+    </tr>
+   <tr>
+      <td>Email</td>
+      <td>{{emp.email}}</td>
+    </tr>
+   <tr>
+      <td>Gender</td>
+      <td>{{emp.gender}}</td>
+    </tr>
+   <tr *ngIf="isdissable">
+      <td>Address</td>
+      <td>{{'aa'}}</td>
+    </tr>
+  <tr *ngIf="isdissable">
+      <td>Full Name</td>
+      <td>{{'aa'}}</td>
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="name" ></td>
+      <td>cahnged name {{name}}</td>
+    </tr>
+    <tr>
+  
+      <td><button  (click)="onClick()">click me</button></td>
+    </tr>
+  </table>

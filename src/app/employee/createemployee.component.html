@@ -1,0 +1,38 @@
+<div>
+  <emp-count *ngIf="emplist" [all]="gettotalemp()"
+             [male]="gettotalmaleemp()"
+             [female]="gettotalfemaleemp()"
+              (radiochngeevent)="oncountchange($event)"></emp-count>
+</div>
+
+<table>
+  <thead>
+  <tr >
+    <td>id</td>
+    <td>name</td>
+    <td>age</td>
+    <td>email</td>
+    <td>gender</td>
+    <td>index</td>
+
+  </tr>
+  </thead>
+  <tbody *ngIf="emplist">
+  <ng-container *ngFor="let emp of emplist;">
+    <tr *ngIf="selectedval=='all' || selectedval==emp.gender">
+    <td><a [routerLink]="['empdetail',emp.id]">{{emp.id}}</a></td>
+    <td>{{emp.name |emptitle:emp.name|uppercase}}</td>
+    <td>{{emp.age}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.gender}}</td>
+    <td>{{islast}}</td>
+   </tr>
+  </ng-container>
+<tr >
+  <td><button  (click)="refresh()">refresh</button></td>
+
+  </tr>
+  
+  </tbody>
+  <tr>{{retrycount}}</tr>
+</table>
